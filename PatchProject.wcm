@@ -1,0 +1,67 @@
+<block name="version">
+<application name="WIPL-D Pro CAD" major="2024" minor="0" build="0"></application>
+</block>
+<block name="grid">
+<setting name="resolution" xres="0.1" yres="0.1" zres="0.1" adaptive="yes"></setting>
+</block>
+<block name="settings">
+<setting name="units" length="Meter" wire_radius="Meter" frequency="GHz" field="V/m" voltage="V"></setting>
+<setting name="sewing" tolerance="0.001"></setting>
+<setting name="SmallFeatureRemoval" size="1.0e-6" fraction_of="model"></setting>
+<setting name="CroppingOptions" keep_solids="false" crop_selection="false" keep_dielectric="false" keep_metallic="false"></setting>
+<setting name="FillHole" method="Create Patch" topology="Minimal" smooth_out="Prefer plane" smooth_in="Sharp"></setting>
+<setting name="MeshMode" mode="auto" algorithm="planar"></setting>
+<setting name="StlMesh" stlMeshSize="399.723" stlSurfAngleTol="30"></setting>
+<setting name="PlanarMesh" planarMeshSize="0.1713" planarSurfAngleTol="30" planarEdgeAngleTol="30" planarDefeaturingTolerance="0.0001" planarMergeTol="10" planarNarrowRatio="0.01" planarHybrid="false" planarMeshSizeCalculation="Default"></setting>
+<setting name="Naming" Scheme="1"></setting>
+<setting name="ReadWavesFromFile" read_waves_from_file="false" file_path=""></setting>
+<setting name="WiplerMergeTolerance" MergeTolerance="0.00000001"></setting>
+</block>
+<block name="simulation">
+<setting name="frequency" bands="1" fstart_1="StartFrequency" fstop_1="StopFrequency" nf_1="NumFrequencies" scale="lin" ref="0" maxpatch="2" large_patch_mesh_algo="advanced" PointsNumber_or_Step="Number"></setting>
+<setting name="options" isAdvanced="false" ia="normal" ce="normal" apr="0" shadow="none" shadred="0" shaddis="0" phi="0" theta="0" mi="normal" mem="0" niter="1000" error="1e-3" reldis="2" group="3" prec="single" basis="modified(auto)" MinOrder="1" IncreaseOrderBy="0"></setting>
+<validation name="option" AutoUnite="ask" ModDomainsAdjacent="ask" ModDomainsInvalid="ask"></validation>
+<setting name="operation" mode="3"></setting>
+</block>
+<block name="symmetry">
+<plane name="0"></plane>
+<PBC name="PBC" PBCflag="false" x1="0" x2="0" y1="0" y2="0" z1="0" z2="0" domain="1" phi="0" theta="90" acceleration="0"></PBC>
+</block>
+<block name="junctions">
+<jun_type name="type" auto="false"></jun_type>
+</block>
+<block name="domains">
+<domain name="1" material_name="vacuum" description="vacuum" type="General" NFflag="yes" Er="1" Ei="0" Mr="1" Mi="0" Sigma="0" Ro="0"></domain>
+</block>
+<block name="MaterialLibrarySort">
+<Sort name="Sort" type="Name"></Sort>
+</block>
+<block name="CS">
+<cs name="LCS1" originx="0" originy="0" originz="0" xAxisx="1" xAxisy="0" xAxisz="0" yAxisx="0" yAxisy="1" yAxisz="0" WCS="yes"></cs>
+</block>
+<block name="de-embedding">
+<dep name="feed" plane="X" length="" sys_len=""></dep>
+</block>
+<block name="adjustable_symbols">
+</block>
+<block name="recommended_values">
+<frequency name="frequency" bandwidth_percent="" bandwidth_symbol="" n_freq="" n_freq_symbol=""></frequency>
+</block>
+<block name="frequency_parallel_run">
+<parallel_run name="parallel_run_parameters" active="false" n_parallel_runs="" reverse_order="false"></parallel_run>
+</block>
+<block name="sweep_parallel_run">
+<parallel_run name="parallel_run_parameters" active="false" n_parallel_runs="" reverse_order="false"></parallel_run>
+</block>
+<block name="characteristic_modes">
+<modes name="mode_number" n_modes="" n_total_modes=""></modes>
+</block>
+<block name="results">
+<radiation name="rad" Nphi="73" phiStart="0" phiStop="360" Ntheta="73" thetaStart="-90" thetaStop="90" additionalRP="false" RPdistance="0" power_balance="false" gain_correction="false" YZS_correction="false" Calculate_RP="true"></radiation>
+<field name="field" Nx="0" xStart="0" xStop="0" Ny="0" yStart="0" yStop="0" Nz="0" zStart="0" zStop="0" domain="ALL" method="Regular" sar="false" Calculate_NF="true"></field>
+<currents name="currents" option="clear" Np=""></currents>
+<curr_coefs name="curr_coefs" condition="Always" format="Binary single"></curr_coefs>
+</block>
+<block name="commands">
+SetSymm "" "" "" release="release=2018_0_0" "release=2018_0_0"
+</block>

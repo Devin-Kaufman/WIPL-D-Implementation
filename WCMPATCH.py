@@ -134,10 +134,11 @@ def WriteWCM(Path):
         
         output_wcm.write('<block name="commands">')
         
-        output_wcm.write('SetSymm "No symmetry" "No symmetry" "No symmetry" 1e-06 "release=2024_0_0"')
+        output_wcm.write('SetSymm "No symmetry" "No symmetry" "No symmetry" 1e-06 "release=2024_0_0"') 
         
         output_wcm.write('DrawCuboid "Ground" (0,0,0) (0.06,0.06,0) 0.000100 "release=2024_0_0"')
         
+        #DrawCuboid seems fairly powerful for our use, don't have to declear individual nodes
         output_wcm.write('DrawCuboid "Patch" (0.011,0.0155,0.0016) (0.049,0.0445,0.0016) 0.000100 "release=2024_0_0"')
         
         output_wcm.write('DrawLine "FeedPin" (0.03,0.03,0.0001) (0.03,0.03,0.0016) 0.0005 1 "release=2024_0_0"')

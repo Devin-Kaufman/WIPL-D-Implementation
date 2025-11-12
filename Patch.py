@@ -2,11 +2,16 @@ import wiplpy.WiplInterface
 import wiplpy.WSymbols
 import WCMPATCH as WCM  # This will import the patch antenna version of WriteWCM
 import os
+import subprocess
 
 WIPLDSuitePath = r"C:\WIPL-D Pro CAD 2024 DEMO"
 base_dir = os.path.dirname(__file__)
 ProjectPath = os.path.join(base_dir, "PatchProject")
 SymbolsPath = os.path.join(base_dir, "PatchProject.wsmb")
+
+
+
+
 
 if not os.path.exists(ProjectPath + ".wcm"):
     WCM.WriteWCM(ProjectPath)  # Calls the patch antenna version
