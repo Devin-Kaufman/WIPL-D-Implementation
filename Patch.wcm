@@ -4,37 +4,46 @@
 <block name="grid">
 <setting name="resolution" xres="0.1" yres="0.1" zres="0.1" adaptive="yes"></setting>
 </block>
+<block name="edging">
+<edge name="1" mew_m="Edge" mew_p="65" domains="All" edge_mesh_algo="Classic"></edge>
+</block>
 <block name="settings">
-<setting name="units" length="Meter" wire_radius="Meter" frequency="GHz" field="V/m" voltage="V"></setting>
+<setting name="units" length="Millimeter" wire_radius="Millimeter" frequency="GHz" field="V/m" voltage="V"></setting>
 <setting name="sewing" tolerance="0.001"></setting>
 <setting name="SmallFeatureRemoval" size="1.0e-6" fraction_of="model"></setting>
 <setting name="CroppingOptions" keep_solids="false" crop_selection="false" keep_dielectric="false" keep_metallic="false"></setting>
 <setting name="FillHole" method="Create Patch" topology="Minimal" smooth_out="Prefer plane" smooth_in="Sharp"></setting>
 <setting name="MeshMode" mode="auto" algorithm="planar"></setting>
-<setting name="StlMesh" stlMeshSize="399.723" stlSurfAngleTol="30"></setting>
-<setting name="PlanarMesh" planarMeshSize="1.7130997600000000e-01" planarSurfAngleTol="30" planarEdgeAngleTol="30" planarDefeaturingTolerance="0.0001" planarMergeTol="10" planarNarrowRatio="0.01" planarHybrid="false" planarMeshSizeCalculation="Default"></setting>
+<setting name="StlMesh" stlMeshSize="5.4507719636363639e+01" stlSurfAngleTol="30"></setting>
+<setting name="PlanarMesh" planarMeshSize="5.4507719636363639e+01" planarSurfAngleTol="30" planarEdgeAngleTol="30" planarDefeaturingTolerance="0.0001" planarMergeTol="10" planarNarrowRatio="0.01" planarHybrid="false" planarMeshSizeCalculation="Default"></setting>
 <setting name="Naming" Scheme="1"></setting>
 <setting name="ReadWavesFromFile" read_waves_from_file="false" file_path=""></setting>
 <setting name="WiplerMergeTolerance" MergeTolerance="0.00000001"></setting>
 </block>
 <block name="simulation">
-<setting name="frequency" bands="1" fstart_1="StartFrequency" fstop_1="StopFrequency" nf_1="NumFrequencies" scale="lin" ref="0" maxpatch="2" large_patch_mesh_algo="advanced" PointsNumber_or_Step="Number"></setting>
+<setting name="frequency" bands="1" fstart_1="9" fstop_1="11" nf_1="5" scale="lin" ref="0" maxpatch="2" large_patch_mesh_algo="advanced" PointsNumber_or_Step="Number"></setting>
 <setting name="options" isAdvanced="false" ia="normal" ce="normal" apr="0" shadow="none" shadred="0" shaddis="0" phi="0" theta="0" mi="normal" mem="0" niter="1000" error="1e-3" reldis="2" group="3" prec="single" basis="modified(auto)" MinOrder="1" IncreaseOrderBy="0"></setting>
 <validation name="option" AutoUnite="ask" ModDomainsAdjacent="ask" ModDomainsInvalid="ask"></validation>
 <setting name="operation" mode="3"></setting>
 </block>
 <block name="symmetry">
-<plane name="0"></plane>
+<plane name="2" type="2" zerotol="1e-06"></plane>
 <PBC name="PBC" PBCflag="false" x1="0" x2="0" y1="0" y2="0" z1="0" z2="0" domain="1" phi="0" theta="90" acceleration="0"></PBC>
 </block>
 <block name="junctions">
 <jun_type name="type" auto="false"></jun_type>
+<junction name="1" radius="" vertex1="Wire1_Vertex1"></junction>
+<junction name="2" radius="" vertex1="Wire1_Vertex2"></junction>
 </block>
 <block name="domains">
 <domain name="1" material_name="vacuum" description="vacuum" type="General" NFflag="yes" Er="1" Ei="0" Mr="1" Mi="0" Sigma="0" Ro="0"></domain>
+<domain name="2" material_name="dielectric" description="" type="General" NFflag="yes" Er="Er" Ei="-Ei" Mr="1" Mi="0" Sigma="0" Ro="1000"></domain>
 </block>
 <block name="MaterialLibrarySort">
 <Sort name="Sort" type="Name"></Sort>
+</block>
+<block name="generators">
+<generator name="1" vreal="1" vimag="0" isFrill="Delta" radius1="0" radius2="0" index="1" asymmetry_images="{(1,0),(1,0),(1,0),(1,0),(1,0),(1,0),(1,0)}" asymmetry_image_flags="(0,0,0,0,0,0,0)" vertex="Wire1_Vertex1" edge="Wire1_Edge1"></generator>
 </block>
 <block name="CS">
 <cs name="LCS1" originx="0" originy="0" originz="0" xAxisx="1" xAxisy="0" xAxisz="0" yAxisx="0" yAxisy="1" yAxisz="0" WCS="yes"></cs>
@@ -48,10 +57,10 @@
 <frequency name="frequency" bandwidth_percent="" bandwidth_symbol="" n_freq="" n_freq_symbol=""></frequency>
 </block>
 <block name="frequency_parallel_run">
-<parallel_run name="parallel_run_parameters" active="false" n_parallel_runs="" reverse_order="false"></parallel_run>
+<parallel_run name="parallel_run_parameters" active="false" n_parallel_runs="16" reverse_order="false"></parallel_run>
 </block>
 <block name="sweep_parallel_run">
-<parallel_run name="parallel_run_parameters" active="false" n_parallel_runs="" reverse_order="false"></parallel_run>
+<parallel_run name="parallel_run_parameters" active="false" n_parallel_runs="16" reverse_order="false"></parallel_run>
 </block>
 <block name="characteristic_modes">
 <modes name="mode_number" n_modes="" n_total_modes=""></modes>
@@ -64,4 +73,29 @@
 </block>
 <block name="commands">
 SetSymm "" "" "" release="release=2018_0_0" "release=2018_0_0"
+DrawRectangle "Body1" (0.0000000000000000e+00,0.0000000000000000e+00,0.0000000000000000e+00) (5.0000000000000000e-01,5.0000000000000000e-01,0.0000000000000000e+00) "release=2024_0_0"
+Validate 1 1 1 1 1 1 "release=2024_0_0"
+Delete "Body1" "no" "release=2024_0_0"
+DrawCuboid "Substrate" (0.0000000000000000e+00,0.0000000000000000e+00,0.0000000000000000e+00) (1,1,0.0000000000000000e+00) .1 "release=2024_0_0"
+DrawCuboid "Patch" (.33,.33,.101) (.66,.66,.101) .001 "release=2024_0_0"
+DrawCuboid "Gnd" (1.0000000000000000e+00,0.0000000000000000e+00,0.0000000000000000e+00) (0.0000000000000000e+00,1.0000000000000000e+00,0.0000000000000000e+00) -t "release=2024_0_0"
+DefineDomain "2" "dielectric" "" "General" { 1, 0, 1, 0, 60e6, 1000 } "release=2024_0_0"
+Delete {"Gnd","Substrate","Patch"} "no" "release=2024_0_0"
+DrawCuboid "Ground" (W/2,W/2,0) (-W/2,-W/2,0) -t-(0) "release=2024_0_0"
+DrawCuboid "Body2" (W/2,W/2,0) (-W/2,-W/2,0) Hsub-(0) "release=2024_0_0"
+AlignWCStoFace "Body2_Face1" 1 "No" "No" "release=2024_0_0"
+DrawCuboid "Body3" (Wpatch/2,Wpatch/2,0) (-Wpatch/2,-Wpatch/2,0) t-(0) "release=2024_0_0"
+MultipleCopy "Body3" 1 (0, 0, 0) (0, 0, -Hsub-t) (1, 1, 1) "No" "release=2024_0_0"
+AlignWCStoGlobalCoordinates "LCS1" "release=2024_0_0"
+Unite "Body4" {"Ground","Body3_1","Body3","Body2"} "release=2024_0_0"
+EditDomain "2" "dielectric" "" "General" { Er, -Ei, 1, 0, 0, 1000 } "release=2024_0_0"
+SetDomain "Body4_Region3" "D_2" "release=2024_0_0"
+DrawLine "Wire1" (Xwire,0,0) (Xwire,0,Hsub) Rwire 2 "release=2024_0_0"
+DrawGenerator "1" ("Wire1_Vertex1","Wire1_Vertex2") "Wire1_Edge1" (1, 0) "Delta" (0 0) {(1,0) , (1,0) , (1,0) , (1,0) , (1,0) , (1,0) , (1,0)} (0,0,0,0,0,0,0) "release=2024_0_0"
+DrawJunction "1" "VertexList" {"Wire1_Vertex1"} 0 "release=2024_0_0"
+DrawJunction "2" "VertexList" {"Wire1_Vertex2"} 0 "release=2024_0_0"
+Validate 1 1 1 1 1 1 "release=2024_0_0"
+CropByPlane "Y" "release=2024_0_0"
+SetSymm "No symmetry" "Symmetry" "No symmetry" 0 {0, 0, 0, 0, 0, 0} {0, 90}  "1" "0" 1e-06 "release=2024_0_0"
+Validate 1 1 1 1 1 1 "release=2024_0_0"
 </block>

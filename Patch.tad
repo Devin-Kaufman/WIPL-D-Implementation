@@ -1,0 +1,49 @@
+<block name="Graphic">
+<setting name="graphic_type" grf_type="2D"></setting>
+</block>
+<block name="CoordinateSystem">
+<setting name="coordinate_system" coordinate_type="Cartesian"></setting>
+</block>
+<block name="Range">
+<setting name="P-axis" pmin="9" pmax="11" pdig="1" psteps="10"></setting>
+<setting name="S-axis" smin="-1" smax="1" sdig="2" ssteps="8"></setting>
+<setting name="Function" fmin="-1" fmax="0.8" scale_factor="1" fdig="1" fsteps="9" normalize="0" level="1"></setting>
+<setting name="KeepRange" keep_range="0" round_range="1" global_3D_range="0"></setting>
+</block>
+<block name="area_and_position">
+<setting name="area" width="1367" height="828" formsize="0"></setting>
+<setting name="position" left="292" top="129"></setting>
+</block>
+<block name="GridOption">
+<setting name="grid" Xgrid="1" Ygrid="1" minorXgrid="0" minorYgrid="0"></setting>
+<setting name="MajorGridLine" width="1" style="0" color="12632256"></setting>
+<setting name="MinorGridLine" width="1" style="1" color="12632256"></setting>
+</block>
+<block name="Mask_1">
+<setting name="Mask" show_mask="1" path_to_mask=""></setting>
+<setting name="MaskLine" width="1" style="0" color="16711680"></setting>
+</block>
+<block name="Mask_2">
+<setting name="Mask" show_mask="1" path_to_mask=" "></setting>
+<setting name="MaskLine" width="1" style="0" color="255"></setting>
+</block>
+<block name="Mask_3">
+<setting name="Mask" show_mask="1" path_to_mask=" "></setting>
+<setting name="MaskLine" width="1" style="0" color="2076908"></setting>
+</block>
+<block name="Mask_4">
+<setting name="Mask" show_mask="1" path_to_mask=" "></setting>
+<setting name="MaskLine" width="1" style="0" color="9252477"></setting>
+</block>
+<block name="Layer_1">
+<setting name="axis" Xaxis="Freq" Yaxis=""></setting>
+<setting name="fixed_values" Freq="9.0" m_cut="1" n_cut="1"></setting>
+<setting name="data" Field="S-parameter" Format="Re+Im" MathExpression=" " MathTrace=" "></setting>
+<setting name="line_type" line="0" dot="0" line_dot="1" apply_to_all="1"></setting>
+<setting name="line" style="0" width="1" color="16711680"></setting>
+<setting name="marker" style="0" size="3" color="16711680" fill="1"></setting>
+<setting name="Legend" Name="1 Patch" Project="C:\Users\dikin\Desktop\Projects\WIPL-D\GITImplementation\Patch.AD1"></setting>
+<setting name="FullScale" is_scale="0" trashold="180"></setting>
+<setting name="Fitting" E0="9.99999974737875E-5" C="1" NaMax0="10" FittingPoints="1024" fitt_enabled="1" fitt_normalization="0"></setting>
+</block>
+

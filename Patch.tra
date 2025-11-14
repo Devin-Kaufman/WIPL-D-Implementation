@@ -1,0 +1,53 @@
+<block name="Graphic">
+<setting name="graphic_type" grf_type="3D"></setting>
+</block>
+<block name="CoordinateSystem">
+<setting name="coordinate_system" coordinate_type="Spherical"></setting>
+</block>
+<block name="Range">
+<setting name="P-axis" pmin="0" pmax="360" pdig="0" psteps="10"></setting>
+<setting name="S-axis" smin="-90" smax="90" sdig="0" ssteps="10"></setting>
+<setting name="Function" fmin="-20" fmax="5" scale_factor="1" fdig="0" fsteps="6" normalize="0" level="0"></setting>
+<setting name="KeepRange" keep_range="0" round_range="1" global_3D_range="0"></setting>
+</block>
+<block name="area_and_position">
+<setting name="area" width="1367" height="828" formsize="0"></setting>
+<setting name="position" left="292" top="129"></setting>
+</block>
+<block name="GridOption">
+<setting name="grid" Xgrid="1" Ygrid="1" minorXgrid="0" minorYgrid="0"></setting>
+<setting name="MajorGridLine" width="1" style="0" color="12632256"></setting>
+<setting name="MinorGridLine" width="1" style="1" color="12632256"></setting>
+</block>
+<block name="antenna_characteristics">
+<setting name="Items" HPBW="0" BW="0" BW_value="10" NNBW="0" FNBW="0" LSL="0" RSL="0" LN="0" RN="0" F/B="0" F/S="0" PV="0" DrawHPBW="0" DrawBW="0" Null_criteria="-15"></setting>
+</block>
+<block name="Mask_1">
+<setting name="Mask" show_mask="1" path_to_mask=""></setting>
+<setting name="MaskLine" width="1" style="0" color="16711680"></setting>
+</block>
+<block name="Mask_2">
+<setting name="Mask" show_mask="1" path_to_mask=" "></setting>
+<setting name="MaskLine" width="1" style="0" color="255"></setting>
+</block>
+<block name="Mask_3">
+<setting name="Mask" show_mask="1" path_to_mask=" "></setting>
+<setting name="MaskLine" width="1" style="0" color="2076908"></setting>
+</block>
+<block name="Mask_4">
+<setting name="Mask" show_mask="1" path_to_mask=" "></setting>
+<setting name="MaskLine" width="1" style="0" color="9252477"></setting>
+</block>
+<block name="Layer_1">
+<setting name="axis" Xaxis="Phi" Yaxis="Theta"></setting>
+<setting name="fixed_values" Freq="11.0" Gen="Gen. 1" Phi="0" Theta="-90.0"></setting>
+<setting name="data" Component="Total" Format="Gain (dB)" MathExpression=" " MathTrace=" " Distance="infinity"></setting>
+<setting name="line_type" line="0" dot="0" line_dot="1" apply_to_all="1"></setting>
+<setting name="line" style="0" width="1" color="16711680"></setting>
+<setting name="marker" style="0" size="3" color="16711680" fill="1"></setting>
+<setting name="Legend" Name="1 Patch" Project="C:\Users\dikin\Desktop\Projects\WIPL-D\GITImplementation\Patch.RA1"></setting>
+<setting name="FullScale" is_scale="0" trashold="180"></setting>
+<setting name="Fitting" method="Lagrange" threshold="0.5" E0="9.99999974737875E-5" C="1" NaMax0="10" FittingPoints="1024" fitt_enabled="0"></setting>
+<setting name="RCS_unit" RCS_meter="0"></setting>
+</block>
+

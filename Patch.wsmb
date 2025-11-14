@@ -1,4 +1,12 @@
->  1  2  2  1  2
-StartFrequency=2.0
-StopFrequency=3.5
-NumFrequencies=15
+>  0  1  2  1  2
+Wpatch=8
+Hsub=0.508
+Wsub=3*Hsub
+t=0.035
+W=Wpatch+2*Wsub
+Xwire=2
+Rwire=0.1
+Er=3.38
+TgD=0.037
+Ei=Er*TgD
+Edge=Hsub/2

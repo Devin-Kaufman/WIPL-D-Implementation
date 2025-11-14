@@ -58,3 +58,6 @@ try:
     print("Simulation finished.")
 except Exception as e:
     print(f"Error running simulation: {e}")
+
+Project = wiplpy.WiplInterface.WProject(ProjectPath)
+Project.Symbols.PrintSymbols()
